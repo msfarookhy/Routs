@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/university');
-if (err){
-    console.log(err);
-}else {
-    console.log("Data Base is connected")
-}
-
+mongoose.connect('mongodb://localhost/hotels',(err)=>{ 
+    if(err){
+        console.log(err);
+    }else {
+        console.log("Database is connceted");
+    } 
+});
 mongoose.Promise = Promise
 
-modules.export.University = require('/university')
+module.exports.Hotel = require('./hotel')
