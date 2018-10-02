@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models');
+var middleware = require('../middleware');
+var {loggedIn} = middleware;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -28,5 +29,10 @@ router.get('/signup',(req,res)=>{
 // add hotel rout
 router.get('/addHotel',(req,res)=>{
   res.render('addHotel');
+});
+
+// updating Hotel Rout
+router.get('/updh',(req,res)=>{
+  res.render('updh');
 });
 module.exports = router;

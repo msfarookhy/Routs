@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
+const middleware = require('../middleware');
+const {loggedIn} = middleware;
+
 
 // hotel rout
 router.get('/',(req,res)=>{
@@ -10,9 +13,9 @@ router.get('/',(req,res)=>{
 });
 
 //create a new hotel - u have to post , and .create(mongoose method) to create new hotel ...
-router.post('/',(req,res)=>{
+router.post('/',loggedIn,(req,res)=>{
     db.Hotel.create(req.body)
-    .then(res.redirect("/hotel"))
+    .then(res.redirect("/home"))
  //.then((hotels)=>res.json(hotels))
     .catch((err)=>res.send(err));
 });
@@ -27,14 +30,14 @@ router.get ('/:id',(req,res)=>{
 });
 
 // update Hotel Details
-router.put('/:id',(req,res)=>{
+router.put('/:id',loggedIn,(req,res)=>{
     db.Hotel.findByIdAndUpdate({_id:req.params.id},req.body)
     .then((hotel)=> res.json(hotel))
     .catch((err)=>res.send(err));
 });
 
 //deleting Hotel
-router.delete('/:id',(req,res)=>{
+router.delete('/:id',loggedIn,(req,res)=>{
     db.Hotel.remove({_id:req.params.id})
     .then(res.send("Hotel Is Delted"))
     .catch((err)=>res.send(err));

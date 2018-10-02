@@ -1,15 +1,15 @@
 <html>
     <head>
-    <title>Express static server</title>
+    <title>Fing Your Room</title>
     <meta charset="utf-8">
     <script  src="/public/vendor/jquery-3_3_1_min_js.js" ></script>
     
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <link  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <link rel="stylesheet" href="/public/stylesheets/style.css" type="text/css">
 </head>
 <body>
@@ -24,11 +24,28 @@
                     <li><a href="/hotel">Hotel</a></li>
                   </ul>
                   <div class="button">
-                  <button class="btn"><a href="/login">Login</a></button>
-                  <button class="btn"><a href="/signup">signup</a></button>
+                      <ul class="nav navbar-nav navbar-right">
+                          <% if(!currentUser){ %>
+                              <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><button class="btn"><a href="/login">Login</a></button></li>
+                              <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><button class="btn"><a href="/signup">signup</a></button></li>
+                              <% } else { %>
+                                <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+                                <li><button class="btn"><a href="/users/logout">Logout</a></button></li>
+                            <% } %>
+                        </ul>
                 </div>
                 </div>
                 
         </nav>
+
+        <div class="container">
+            <% if(error && error.length > 0) { %>
+              <div class="alert alert-danger"><p><%=error %></p></div>
+            <% } %>
+            
+            <% if(success && success.length > 0) { %>
+              <div class="alert alert-success"><p><%= success %></p></div>
+            <% } %>
+         </div>
        
 

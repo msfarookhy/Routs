@@ -7,5 +7,5 @@ mongoose.connect('mongodb://localhost/hotels',(err)=>{
     } 
 });
 mongoose.Promise = Promise
-
+module.exports.User = require('./users')
 module.exports.Hotel = require('./hotel')

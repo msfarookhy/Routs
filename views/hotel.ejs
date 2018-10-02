@@ -1,7 +1,85 @@
 <% include partials/header %>
+<button class="btn btn-pimary"><a href="/addHotel">Add Hotel</a></button>
+
+<!-- form 2 for updating a hotel -->
+<div class="container" id="updateContainer">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Update Your Hotel Details</h1>
+                    <hr/>
+                </div>
+            </div>
+            <div class=" main-login main-center">
+                <form class="form-horizontal" id="adding2" method="POST" action="/home">
+                    <div class="form-group">
+                        <label for="hotelImage" class="cols-sm-2 control-label" id = "id1">Give Image Url</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="hotelImage" id="hotelImage" placeholder="Image Url" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hotelCity" class="cols-sm-2 control-label" id="id2">Enter Hotel City</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="hotelCity" id="hotelCity" placeholder="Enter City" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hotelName" class="cols-sm-2 control-label" id="id3">Enter Hotel Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="hotelName" id="hotelName" placeholder="Enter Hotel Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hotelAddress" class="cols-sm-2 control-label" id="id4">Enter Hotel Address</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="hotelAddress" id="hotelAddress" placeholder="Enter Hotel Address" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hotelContact" class="cols-sm-2 control-label" id="id5">Enter Hotel Contact</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="hotelContact" id="hotelContact" placeholder="Enter Hotel Contact Number" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button"> Update </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+</div>
+
 <div class="content"></div>
 
+<script>
+        // S('#addR').hide();
+        $('#updateContainer').hide(); 
+       </script>
+     
 
-<script defer async  src="/public/javascripts/hotel.js"></script>
+<script defer src="/public/javascripts/hotel.js"></script>
 
 <% include partials/footer %>
