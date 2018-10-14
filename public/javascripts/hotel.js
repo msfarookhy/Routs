@@ -84,6 +84,11 @@
     template += '<h3 class="card-title">' + id.hotelName + "</h3>";
     template += '<p  class="card-text">' + id.hotelAddress + "</p><br>";
     template += '<p  class="card-text">' + id.hotelContact + "</p><br>";
+    template += '<p  class="card-text">' + id.latitude + "</p><br>";
+    template += '<p  class="card-text">' + id.longitude + "</p><br>";
+    template += '<p  class="card-text">' + id.bedrooms + "</p><br>";
+    template += '<p  class="card-text">' + id.bathrooms + "</p><br>";
+    template += '<p  class="card-text">' + id.carSpaces + "</p><br>";
     template +='<div id="hide">'
     template += '<div>'
     template += '<button  class="del btn btn-primary">Delete</button>';

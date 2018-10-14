@@ -5,8 +5,12 @@ const hotelSchema = new mongoose.Schema ({
  hotelName :String,
  hotelAddress:String,
  hotelContact: Number,
- 
-    
+ latitude : Number,
+ longitude :Number,
+ bedrooms:Number,
+ bathrooms:Number,
+ carSpaces:Number,
+ price:Number    
 })
 
 
