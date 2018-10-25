@@ -17,7 +17,7 @@ router.post('/signup',(req,res)=>{
 
   db.User.register(new db.User({username:req.body.username}),req.body.password,(user)=>{
     if (err){
-      console.log(err);
+      console.log('err');
       res.render('signup');
     } else {
       passport.authenticate("local")(req,res,function(){

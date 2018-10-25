@@ -12,7 +12,7 @@ router.get('/home',(req,res)=>{
 
 // hotel rout 
 // router.get('/hotel',(req,res)=>{
-//   res.render('hotel');
+//   res.render('hotel'); 
 // });
 
 //login rout
@@ -35,4 +35,7 @@ router.get('/addHotel',(req,res)=>{
 router.get('/updh',(req,res)=>{
   res.render('updh');
 });
+router.get('/maps',(req,res)=>{
+  res.render('hotel')
+})
 module.exports = router;

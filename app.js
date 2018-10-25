@@ -6,8 +6,8 @@ var bodyParser = require('body-parser')
 var logger = require('morgan');
 var flash = require('connect-flash');
 var methodOverride = require('method-override');
-var passport              = require("passport")
-var LocalStrategy         = require("passport-local")
+var passport = require("passport")
+var LocalStrategy= require("passport-local")
 
 
 
@@ -16,6 +16,7 @@ var LocalStrategy         = require("passport-local")
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var hotelRouter = require('./routes/hotel');
+
 
 
 

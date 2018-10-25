@@ -15,8 +15,8 @@ router.get('/',(req,res)=>{
 //create a new hotel - u have to post , and .create(mongoose method) to create new hotel ...
 router.post('/',loggedIn,(req,res)=>{
     db.Hotel.create(req.body)
-    .then(res.redirect("/home"))
- //.then((hotels)=>res.json(hotels))
+    // .then(res.redirect('/'))
+ .then((hotels)=>res.json(hotels))
     .catch((err)=>res.send(err));
 });
 

@@ -3,7 +3,7 @@
  hotel = [];
  hotel.database = {};
  var loadAssets = function() {
-    $.getJSON("/hotel/", function(data) {
+    $.getJSON("/hotel", function(data) {
       
       hotel.database = data;
       hotel.init();
@@ -33,7 +33,7 @@
         e.preventDefault();
    
         $.post({
-          url : "/hotel/" + id._id,
+          url : "/hotel" + id._id,
           type: "PUT",
           data : {
               hotelImage :$("#hotelImage").val(),
@@ -44,7 +44,7 @@
 
           }
         });
-        window.location = "/home"
+        window.location = "/"
       });
 
 
@@ -59,7 +59,7 @@
         url: url,
         method: "DELETE"
       });
-      window.location = "/home";
+      window.location = "/";
     });
   };
   
@@ -109,4 +109,3 @@
   // on click
   
   loadAssets();
-  
